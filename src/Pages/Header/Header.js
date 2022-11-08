@@ -14,12 +14,12 @@ const Header = () => {
            <Link to='/service'>Service</Link>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="btn btn-ghost normal-case text-xl">Online Shop</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
            <Link to='/'>Home</Link>
-           <Link to='/service'>Service</Link>
+          
           </ul>
         </div>
         <div className="navbar-end">
