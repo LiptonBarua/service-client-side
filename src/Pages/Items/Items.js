@@ -10,10 +10,10 @@ const Items = () => {
         .then(data=>setItems(data))
     },[])
     return (
-        <div>
-           <h1>{items.details}</h1>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 my-10 container mx-auto'>
+           
            {
-            items.map(item=><ItemsDetails></ItemsDetails>)
+            items.map(item=><ItemsDetails key={item._id} item={item}></ItemsDetails>)
            }
         </div>
     );
