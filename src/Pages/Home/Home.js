@@ -1,14 +1,36 @@
-import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLoaderData} from 'react-router-dom';
 import Card from './Card';
-import logo from '../../assets/vegan-bowl-healthy-tasty-food-removebg-preview.png'
+import './Home.css'
+
 
 const Home = () => {
- const cards = useLoaderData();
+  // const {service, count} =useLoaderData([])
+const [service, setService] = useState([]);
+const[count, setCount] = useState(0);
+const[page, setPage] =useState(0);
+const [size, setSize] = useState(3)
+
+
+
+useEffect (()=>{
+const url =`http://localhost:5000/service?page=${page}&size=${size}`
+ fetch(url)
+ .then(res=>res.json())
+ .then(data=>{
+    setCount(data.count)
+    setService(data.service)
+})
+},[page, size])
+
+const pages = Math.ceil(count/size);
+
+
+
 
     return (
-        <div className='container mx-auto '>
-          <div className="hero min-h-screen" style={{ backgroundImage: `url("https://securecdn.pymnts.com/wp-content/uploads/2022/10/food-delivery-1000x600.jpg")` }}>
+        <div className=' '>
+          <div className="hero min-h-screen container mx-auto" style={{ backgroundImage: `url("https://securecdn.pymnts.com/wp-content/uploads/2022/10/food-delivery-1000x600.jpg")` }}>
   <div className=""></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
@@ -18,39 +40,29 @@ const Home = () => {
     </div>
   </div>
 </div>
-           <div className='grid grid-cols-1 md:grid-cols-3 gap-4 my-10'>
+           <div className='grid grid-cols-1 md:grid-cols-3 gap-4 my-10 container mx-auto'>
           
              {
-               cards.map(card=><Card key={card._id} card={card}></Card>)
+               service.map(card=><Card key={card._id} card={card}></Card>)
              }
            </div>
+           <div className="text-center my-5">
+				<div className="pagination ">
+					{[...Array(pages).keys()].map((number) => (
+						<button
+							key={number}
+							className={page === number ? 'selected' : 'selected1'}
+							onClick={() => setPage(number)}
+						>
+							{number + 1}
+						</button>
+					))}
+				</div>
+			</div>
            <div className='grid justify-items-center my-10'>
-           <Link to='/items'><button className="btn btn-active ">See More</button></Link>
+           <Link to='/items'><button className="btn btn-orange ">See More</button></Link>
            </div>
-            <div>
-            <footer className="footer p-10 bg-neutral text-neutral-content">
-  <div>
-    <span className="footer-title">Services</span> 
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
-  </div> 
-  <div>
-    <span className="footer-title">Company</span> 
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
-  </div> 
-  <div>
-    <span className="footer-title">Legal</span> 
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
-  </div>
-</footer>
-            </div>
+          
             
         </div>
     );
