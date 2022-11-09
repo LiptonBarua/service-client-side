@@ -14,7 +14,7 @@ const Service = () => {
     <h2>Price: ${price}</h2>
     <p className='text-justify'>{details}</p>
     <div className="card-actions justify-end">
-      <Link to='/'><button className="btn btn-primary">Details</button></Link>
+      <Link to='/items'><button className="btn btn-primary">Details</button></Link>
     </div>
   </div>
 </div>
