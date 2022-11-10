@@ -19,35 +19,35 @@ const Review = () => {
         }
         }, [user?.email])
     return (
-        <div>
-        <h1>{review?.length}</h1>
-        <div className="overflow-x-auto w-full">
-<table className="table w-full">
+         <div>
+<div className="overflow-x-auto w-full">
+  <table className="table w-full">
 
-<thead>
-  <tr>
-    <th>
-      <label>
-        <input type="checkbox" className="checkbox" />
-      </label>
-    </th>
-    <th>Name</th>
-    <th>Job</th>
-    <th>Favorite Color</th>
-    <th></th>
-  </tr>
-</thead>
-<tbody>
+    <thead>
+      <tr>
+        <th>
+          <label>
+            <input type="checkbox" className="checkbox" />
+          </label>
+        </th>
+        <th>User Name and Photo</th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Favorite Color</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        review.map(review=><ReviewDetails key={review._id} review={review}></ReviewDetails>)
+      }
+    </tbody>
 
-  {
-    review.map(review=><ReviewDetails key={review._id} review={review}></ReviewDetails>)
-  }
-</tbody>
-
-</table>
+  </table>
 </div>
-</div>
-    );
+
+         </div>
+       );
 };
 
 export default Review;

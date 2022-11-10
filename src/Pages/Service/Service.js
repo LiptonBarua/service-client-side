@@ -17,6 +17,7 @@ const Service = () => {
       const email = user?.email || 'unregister';
       const message = form.message.value;
       const phone = form.phone.value;
+      const phote= form.img.value;
 
       const order={
         service: _id,
@@ -25,7 +26,8 @@ const Service = () => {
         customer: name,
         email,
         phone, 
-        message
+        message,
+        phote
     }
     if(phone.length>10){
       alert('Phone number should be 11 character');
@@ -70,6 +72,7 @@ const Service = () => {
         <form onSubmit={handleReview} className='bg-orange-600 p-10 my-16 rounded-2xl'>
         <h2 className='text-3xl my-8'>My Service: {title}</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+            <input name='img' type="text" placeholder="Photo URL" className="input input-bordered w-full" required/>
             <input name='name' type="text" placeholder="Your Name" className="input input-bordered w-full" required/>
             <input name='phone' type="text" placeholder="Your Phone" className="input input-bordered w-full" required/>
             <input name='price' type="text" placeholder="Your Price" className="input input-bordered w-full" required/>

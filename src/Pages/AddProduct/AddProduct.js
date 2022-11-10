@@ -50,7 +50,7 @@ const AddProduct = () => {
    
    
      
-     {/* <Link to='/register' className="underline dark:text-gray-100 ml-2 text-orange-600 font-bold">Sign up</Link> */}
+    
    
  </div>
    </div>
