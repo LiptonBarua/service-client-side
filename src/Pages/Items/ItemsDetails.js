@@ -6,12 +6,13 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ItemsDetails = ({item}) => {
     const {img, title, price, details, _id} = item;
+    console.log(img)
     return (
         <div>
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
           <PhotoProvider>
             <PhotoView src={img}>
-            <figure><img src={img} alt="Shoes" /></figure>
+            <figure><img src={img} alt="" /></figure>
             </PhotoView>
           </PhotoProvider>
    

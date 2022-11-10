@@ -1,0 +1,17 @@
+.blog{
+    background-color: black;
+    color: white;
+    padding: 30px;
+    margin: 30px 80px;
+    border-radius: 20px;
+}
+.blog h1{
+  font-size: 24px;
+  text-align: center;
+  margin: 10px 10px;
+}
+.blog span{
+    color: red;
+    margin-right: 10px;
+    font-size: 20px;
+}
