@@ -8,7 +8,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
   
-    const from = location.state?.from?.pathname || '/';
+    const from = location.statea?.from?.pathname || '/';
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();

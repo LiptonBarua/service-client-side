@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     path: '/', element: <Main></Main>, children: [
         {
             path: '/', 
-            element: <Home></Home>,
+            element: <PrivateRouter><Home></Home></PrivateRouter>
           
         },
         {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/items', 
-            element: <Items></Items>,
+            element: <PrivateRouter><Items></Items></PrivateRouter>,
             loader: ()=>fetch('http://localhost:5000/service')
         },
         {
