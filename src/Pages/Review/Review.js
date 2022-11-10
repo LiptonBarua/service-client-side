@@ -9,7 +9,7 @@ const Review = () => {
 
     useEffect(()=>{
         if(user?.email){
-            fetch(`https://assiament-server.vercel.app/orders?email=${user?.email}`,{
+            fetch(`https://assiament-server.vercel.app/orders?serviceName=${user?.serviceName}`,{
               headers:{
                 authorization: `Bearer ${localStorage.getItem('assianment')}`
               }

@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     path: '/', element: <Main></Main>, children: [
         {
             path: '/', 
-            element: <PrivateRouter><Home></Home></PrivateRouter>
+            element: <Home></Home>
           
         },
         {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/items', 
-            element: <PrivateRouter><Items></Items></PrivateRouter>,
+            element: <Items></Items>,
             loader: ()=>fetch('https://assiament-server.vercel.app/service')
         },
         {
