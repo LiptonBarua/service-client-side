@@ -29,9 +29,9 @@ const Register = () => {
         googleSignIn(googleProvider)
         .then(result=>{
             const user = result.user;
-            console.log(user)
+            alert('My Register Successfully')
         })
-        .catch(error =>console.error(error))
+        .catch(error =>alert(error))
      }
      
 

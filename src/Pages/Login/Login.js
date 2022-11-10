@@ -22,7 +22,7 @@ const Login = () => {
             alert('My Login Successfully')
             form.reset()
         })
-        .catch(error=>console.error(error))
+        .catch(error=>alert(error))
      }
 
      const handleGoogleSignIn=()=>{
