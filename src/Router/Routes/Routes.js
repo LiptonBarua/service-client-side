@@ -7,6 +7,7 @@ import Main from "../../Pages/Main/Main";
 import Register from "../../Pages/Register/Register";
 import Review from "../../Pages/Review/Review";
 import Service from "../../Pages/Service/Service";
+import PrivateRouter from "../PriveteRouter/PrivateRouter";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/service/:id', 
-            element: <Service></Service>,
+            element: <PrivateRouter><Service></Service></PrivateRouter>,
             loader: ({params})=>fetch(`http://localhost:5000/service/${params.id}`)
         },
         {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
             loader: ()=>fetch('http://localhost:5000/service')
         },
         {
-            path: '/blog', element: <Blog></Blog>
+            path: '/blog', element: <PrivateRouter><Blog></Blog></PrivateRouter>
         },
         {
             path: '/login',
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/review', 
-            element: <Review></Review>
+            element: <PrivateRouter> <Review></Review></PrivateRouter>
         }
     ]
  },

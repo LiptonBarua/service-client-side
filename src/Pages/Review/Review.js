@@ -18,6 +18,24 @@ const Review = () => {
             .then(data=>setReview(data))
         }
         }, [user?.email])
+
+        const handleDelete=id=>{
+          const procced = window.confirm('Are you sure, you want to cancel this order');
+          if(procced){
+           fetch(`http://localhost:5000/orders/${id}`,{
+               method: 'DELETE'
+           })
+           .then(res=>res.json())
+           .then(data=>{
+               console.log(data)
+               if(data.deletedCount){
+                alert('deleted successfully');
+                const remaining =review.filter(ods=>ods._id!==id);
+               setReview(remaining);
+               }
+           })
+          }
+      }
     return (
          <div>
 <div className="overflow-x-auto w-full">
@@ -39,7 +57,7 @@ const Review = () => {
     </thead>
     <tbody>
       {
-        review.map(review=><ReviewDetails key={review._id} review={review}></ReviewDetails>)
+        review.map(review=><ReviewDetails key={review._id} review={review} handleDelete={handleDelete}></ReviewDetails>)
       }
     </tbody>
 
