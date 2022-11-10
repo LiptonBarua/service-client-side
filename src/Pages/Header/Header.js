@@ -22,6 +22,19 @@ const Header = () => {
             <Link to='/'>Home</Link>
            <Link to='/service'>Service</Link>
            <Link to='/blog'>Blog</Link>
+           {
+            user?.email?
+            <>
+              <Link to='/addProduct'>Add Product</Link>
+              <Link to='/review'>My Reviews</Link>
+              <Link onClick={handleLogOut} className='font-extrabold'><button className="btn-ghost">Sign Out</button></Link>
+            </>
+            :
+           <>
+            <Link to='/login'>Login</Link>
+            <Link to='/register'>Register</Link>
+           </>
+           }
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-xl">Online Shop</a>
@@ -36,10 +49,13 @@ const Header = () => {
             <>
               <Link to='/addProduct'>Add Product</Link>
               <Link to='/review'>My Reviews</Link>
-              <li onClick={handleLogOut} className='font-extrabold'><button className="btn-ghost">Sign Out</button></li>
+              <Link onClick={handleLogOut} className='font-extrabold'><button className="btn-ghost">Sign Out</button></Link>
             </>
             :
+            <>
             <Link to='/login'>Login</Link>
+            <Link to='/register'>Register</Link>
+           </>
            }
           
           </ul>
