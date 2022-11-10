@@ -14,6 +14,7 @@ const Card = ({card}) => {
     </PhotoView>
 
  </PhotoProvider>
+ 
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
     <h2>Price: ${price}</h2>
@@ -21,6 +22,7 @@ const Card = ({card}) => {
    
     <div className="card-actions justify-end">
       <Link to={`/service/${_id}`}><button className="btn btn-primary">Details</button></Link>
+   
     </div>
   </div>
 </div>

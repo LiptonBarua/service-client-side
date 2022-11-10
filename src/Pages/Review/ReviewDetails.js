@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const ReviewDetails = ({review, handleDelete}) => {
     const {_id, serviceName,price, customer, phone, service, message, phote} =review;
-    const[reviewService, setReviewService] =useState({})
+  
 
 
     return (

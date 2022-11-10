@@ -43,7 +43,7 @@ const pages = Math.ceil(count/size);
            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 my-10 container mx-auto'>
           
              {
-               service.map(card=><Card key={card._id} card={card}></Card>)
+               service.map(card=><Card key={card._id} card={card} ></Card>)
              }
            </div>
            <div className="text-center my-5">

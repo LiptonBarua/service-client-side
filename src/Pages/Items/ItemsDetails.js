@@ -4,7 +4,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 
-const ItemsDetails = ({item}) => {
+const ItemsDetails = ({item, handleDelete}) => {
     const {img, title, price, details, _id} = item;
     console.log(img)
     return (
@@ -22,6 +22,7 @@ const ItemsDetails = ({item}) => {
     <p>{details.length>100? details.slice(0,100)+'...': details}</p>
     <div className="card-actions justify-end">
       <Link to={`/service/${_id}`}><button className="btn btn-primary">Details</button></Link>
+    
     </div>
   </div>
 </div>
