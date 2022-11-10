@@ -19,7 +19,7 @@ const Login = () => {
         signIn(email, password)
         .then(result=>{
             const user = result.user;
-            alert('My Login ')
+            alert('My Login Successfully')
             form.reset()
         })
         .catch(error=>console.error(error))
