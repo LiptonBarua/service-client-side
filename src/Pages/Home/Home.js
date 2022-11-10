@@ -14,7 +14,7 @@ const [size, setSize] = useState(3)
 
 
 useEffect (()=>{
-const url =`http://localhost:5000/service?page=${page}&size=${size}`
+const url =`https://assiament-server.vercel.app/service?page=${page}&size=${size}`
  fetch(url)
  .then(res=>res.json())
  .then(data=>{

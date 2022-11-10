@@ -9,7 +9,7 @@ const Review = () => {
 
     useEffect(()=>{
         if(user?.email){
-            fetch(`http://localhost:5000/orders?email=${user?.email}`,{
+            fetch(`https://assiament-server.vercel.app/orders?email=${user?.email}`,{
               headers:{
                 authorization: `Bearer ${localStorage.getItem('assianment')}`
               }
@@ -22,7 +22,7 @@ const Review = () => {
         const handleDelete=id=>{
           const procced = window.confirm('Are you sure, you want to cancel this order');
           if(procced){
-           fetch(`http://localhost:5000/orders/${id}`,{
+           fetch(`https://assiament-server.vercel.app/orders/${id}`,{
                method: 'DELETE'
            })
            .then(res=>res.json())

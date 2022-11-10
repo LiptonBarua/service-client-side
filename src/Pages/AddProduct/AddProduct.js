@@ -11,7 +11,7 @@ const AddProduct = () => {
         };
         
         console.log(service.photo)
-        fetch("http://localhost:5000/service", {
+        fetch("https://assiament-server.vercel.app/service", {
             method: "POST",
             headers: {
               "content-type": "application/json"

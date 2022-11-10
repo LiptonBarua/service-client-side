@@ -23,12 +23,12 @@ const router = createBrowserRouter([
         {
             path: '/service/:id', 
             element: <PrivateRouter><Service></Service></PrivateRouter>,
-            loader: ({params})=>fetch(`http://localhost:5000/service/${params.id}`)
+            loader: ({params})=>fetch(`https://assiament-server.vercel.app/service/${params.id}`)
         },
         {
             path: '/items', 
             element: <PrivateRouter><Items></Items></PrivateRouter>,
-            loader: ()=>fetch('http://localhost:5000/service')
+            loader: ()=>fetch('https://assiament-server.vercel.app/service')
         },
         {
             path: '/blog', element: <PrivateRouter><Blog></Blog></PrivateRouter>

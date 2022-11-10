@@ -32,7 +32,7 @@ const Service = () => {
     if(phone.length>10){
       alert('Phone number should be 11 character');
     }
-    fetch('http://localhost:5000/orders',{
+    fetch('https://assiament-server.vercel.app/orders',{
       method: 'POST',
       headers: {
         "content-type": "application/json"
@@ -69,7 +69,9 @@ const Service = () => {
 </div>
         </div>
         <div>
+          
         <form onSubmit={handleReview} className='bg-orange-600 p-10 my-16 rounded-2xl'>
+        <h1 className='text-3xl text-center text-info'>My Review</h1>
         <h2 className='text-3xl my-8'>My Service: {title}</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
             <input name='img' type="text" placeholder="Photo URL" className="input input-bordered w-full" required/>
