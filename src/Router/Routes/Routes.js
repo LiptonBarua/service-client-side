@@ -6,6 +6,7 @@ import Login from "../../Pages/Login/Login";
 import Main from "../../Pages/Main/Main";
 import Register from "../../Pages/Register/Register";
 import Review from "../../Pages/Review/Review";
+import ReviewDetails from "../../Pages/Review/ReviewDetails";
 import Service from "../../Pages/Service/Service";
 import PrivateRouter from "../PriveteRouter/PrivateRouter";
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         {
             path: '/review', 
             element: <PrivateRouter> <Review></Review></PrivateRouter>
+        },
+        {
+            path: '/reviewDetails',
+            element: <PrivateRouter><ReviewDetails></ReviewDetails></PrivateRouter>
         }
     ]
  },
