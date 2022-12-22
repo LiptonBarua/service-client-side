@@ -1,5 +1,4 @@
 import React from 'react';
-
 const AddProduct = () => {
     const handleSubmit=(event)=>{
         event.preventDefault();
@@ -10,7 +9,7 @@ const AddProduct = () => {
           img: event.target.img.value
         };
         
-        console.log(service.photo)
+     
         fetch("https://assiament-server.vercel.app/service", {
             method: "POST",
             headers: {
@@ -19,7 +18,10 @@ const AddProduct = () => {
             body: JSON.stringify(service)
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            
+            
+            console.log(data)})
        
     }
     return (
